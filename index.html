@@ -18,8 +18,8 @@
   <script src="GameOfLife.js"></script>
   <script>
 
-    var width = 25;
-    var height = 25;
+    var width = 50;
+    var height = 50;
 
     var main = document.getElementById("main");
 
@@ -28,6 +28,7 @@
         var element = document.createElement("li");
         element.setAttribute("x", x);
         element.setAttribute("y", y);
+        element.setAttribute("id", "x" + x + "y" + y);
         element.classList.add("cell-pixel")
         main.appendChild(element);
       }

@@ -52,13 +52,16 @@ select, input {
 .cell-pixel {
   float: left;
   margin: 0;
-  border: 1px solid #333;
-  width: 18px;
-  height: 18px;
+  border: 0px solid #333;
+  width: 10px;
+  height: 10px;
 
   font-weight: bold;
   text-align: center;
+}
 
+.cell-pixel:hover {
+  background: yellow;
 }
 
 .alive {

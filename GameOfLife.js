@@ -51,7 +51,7 @@
 
       var neighbors = GO.MatrixOps.countNeighbors(x, y, game.grid);
 
-      $cell = $("li[x=" + x + "][y= " + y + "]");
+      $cell = $("#x" + x + "y" + y);
       if (game.grid[x][y] == true) {
         $cell.addClass("alive");
       } else {
@@ -75,4 +75,5 @@
 
     game.draw();
   };
+
 })(this);
