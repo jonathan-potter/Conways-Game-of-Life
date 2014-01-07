@@ -96,6 +96,7 @@ select, input {
   float: left;
   font-size: 18px;
   font-weight: bold;
+  cursor: pointer;
   padding: 5px;
   margin-bottom: 4px;
   background: #f44;
@@ -104,6 +105,10 @@ select, input {
   vertical-align: middle;
   line-height: 18px;
   border-radius: 2px;
+}
+
+.button img {
+  cursor: pointer;
 }
 
 #sidebar-button-cluster {
