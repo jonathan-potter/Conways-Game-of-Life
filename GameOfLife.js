@@ -1,7 +1,7 @@
 (function (root) {
   var GO = root.GO = (root.GO || {});
 
-  GO.tickRate = 1;
+  GO.tickrate = 16;
 
   var createPixel = function (ctx) {
     var pixel = ctx.createImageData(1,1); // only do this once per page
@@ -18,7 +18,8 @@
     this.width = width;
     this.height = height;
     this.grid = GO.MatrixOps.createGrid(width, height);
-    GO.MatrixOps.randomizeContents(grid);
+    this.tickrate = GO.tickrate;
+    GO.MatrixOps.randomizeContents(this.grid);
   };
 
   Game.prototype.rules = function (alive, neighbors) {
@@ -39,7 +40,7 @@
   };
 
   Game.prototype.start = function () {
-    this.intervalId = window.setInterval(game.step.bind(this), GO.tickRate);
+    this.intervalId = window.setInterval(game.step.bind(this), game.tickrate);
   };
 
   Game.prototype.stop = function () {

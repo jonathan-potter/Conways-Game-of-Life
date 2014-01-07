@@ -2,48 +2,46 @@
   <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-    <title>Game of Life</title>
+    <title>Conway's Game of Life</title>
 
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper clearfix">
       <header>
-        <h1>Game of Life</h1>
+        <h1>Conway's Game of Life</h1>
       </header>
-      <ul class="main" id="main"></main>
+      <ul class="main clearfix" id="main"></ul>
+      <div id="sidebar-button-cluster">
+        <div class="button square-button" id="speed-up-button">+</div>
+        <div class="button square-button" id="speed-down-button">-</div>
+        <nav id="external-links">
+          <ul>
+            <li>
+              <a href="http://github.com/jonathan-potter/Conways-Game-of-Life">
+                <img src="images/Github-Mark.png" class="link-square"></img>
+              </a>
+            </li>
+            <li>
+              <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">
+                <img src="images/Wikipedia-icon.svg.png" class="link-square"></img>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="clearfix" id="bottom-button-cluster">
+        <div class="button" id="randomize-button">randomize</div>
+        <div id="tickrate-indicator">Tickrate: 16</div>
+      </div>
+    </div>
   </body>
 
   <script src="jquery-2.0.3.js"></script>
   <script src="MatrixOperations.js"></script>
   <script src="GameOfLife.js"></script>
+  <script src="DOMSetup.js"></script>
   <script>
-
-    var width = 50;
-    var height = 50;
-
-    var main = document.getElementById("main");
-
-    for (var x = 0;x < width;x++) {
-      for (var y = 0;y < height;y++) {
-        var element = document.createElement("li");
-        element.setAttribute("x", x);
-        element.setAttribute("y", y);
-        element.setAttribute("id", "x" + x + "y" + y);
-        element.classList.add("cell-pixel")
-        main.appendChild(element);
-      }
-    }
-
-    $(".cell-pixel").on("click", function (event) {
-      $element = $(event.currentTarget);
-      $element.toggleClass("alive");
-      x = $element.attr("x");
-      y = $element.attr("y");
-      game.grid[x][y] = !game.grid[x][y];
-    });
-
     var game = new GO.Game(width, height);
     game.start();
-
   </script>
 </html>
