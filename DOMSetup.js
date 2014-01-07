@@ -46,10 +46,17 @@ $("#speed-down-button").on("click", function (event) {
 
 $("#randomize-button").on("click", function (event) {
   GO.MatrixOps.randomizeContents(game.grid);
+
+  game.draw();
 });
 
 $("#play-button").on("click", function (event) {
   game.start();
+});
+
+$("#step-button").on("click", function (event) {
+  game.stop();
+  game.step();
 });
 
 $("#pause-button").on("click", function (event) {

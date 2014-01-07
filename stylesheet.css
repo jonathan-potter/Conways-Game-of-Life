@@ -79,7 +79,7 @@ select, input {
 
 .button {
   float: left;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   padding: 5px;
   margin-bottom: 4px;
@@ -105,8 +105,19 @@ select, input {
   width: 498px;
 }
 
-#play-button {
-  font-size: 15px;
+.play-image {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+#step-button {
+  font-size: 17px;
+}
+
+#step-arrow-modifier {
+  position: relative;
+  top: -1;
 }
 
 .square-button {
