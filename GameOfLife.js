@@ -41,10 +41,12 @@
 
   Game.prototype.start = function () {
     this.intervalId = window.setInterval(game.step.bind(this), game.tickrate);
+    game.active = true;
   };
 
   Game.prototype.stop = function () {
     window.clearInterval(this.intervalId);
+    game.active = false;
   };
 
   Game.prototype.draw = function () {

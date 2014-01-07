@@ -23,23 +23,35 @@ $(".cell-pixel").on("click", function (event) {
 });
 
 $("#speed-up-button").on("click", function (event) {
-  game.stop();
   game.tickrate = game.tickrate / 2;
   $("#tickrate-indicator").html("Tickrate: " + game.tickrate);
-  game.start();
+  if (game.active) {
+    game.stop();
+    game.start();
+  }
 
   console.log("tickrate: " + game.tickrate);
 });
 
 $("#speed-down-button").on("click", function (event) {
-  game.stop();
   game.tickrate = game.tickrate * 2;
   $("#tickrate-indicator").html("Tickrate: " + game.tickrate);
-  game.start();
+  if (game.active) {
+    game.stop();
+    game.start();
+  }
 
   console.log("tickrate: " + game.tickrate);
 });
 
 $("#randomize-button").on("click", function (event) {
   GO.MatrixOps.randomizeContents(game.grid);
+});
+
+$("#play-button").on("click", function (event) {
+  game.start();
+});
+
+$("#pause-button").on("click", function (event) {
+  game.stop();
 });
