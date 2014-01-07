@@ -29,6 +29,42 @@ $(".cell-pixel").on("click", function (event) {
   game.draw();
 });
 
+$(".cell-pixel").on("mouseout", function (event) {
+  $element = $(event.currentTarget);
+  var x0 = parseInt($element.attr("x"));
+  var y0 = parseInt($element.attr("y"));
+
+  var location = {x: x, y: y};
+  game.currentObject.forEach(function (cell) {
+    var dx = cell["x"];
+    var dy = cell["y"];
+
+    var x = x0 + dx;
+    var y = y0 + dy;
+
+    $("#x" + x + "y" + y).removeClass("highlighted");
+
+  });
+});
+
+$(".cell-pixel").on("mouseover", function (event) {
+  $element = $(event.currentTarget);
+  var x0 = parseInt($element.attr("x"));
+  var y0 = parseInt($element.attr("y"));
+
+  var location = {x: x, y: y};
+  game.currentObject.forEach(function (cell) {
+    var dx = cell["x"];
+    var dy = cell["y"];
+
+    var x = x0 + dx;
+    var y = y0 + dy;
+
+    $("#x" + x + "y" + y).addClass("highlighted");
+
+  });
+});
+
 $("#speed-up-button").on("click", function (event) {
   game.tickrate = game.tickrate / 2;
   $("#tickrate-indicator").html("Tickrate: " + game.tickrate);
@@ -73,6 +109,14 @@ $("#pause-button").on("click", function (event) {
 $("#clear-button").on("click", function (event) {
   GO.MatrixOps.clearGrid(game.grid);
   game.draw();
+});
+
+$("#pixel-button").on("click", function (event) {
+  game.currentObject = GO.Library.pixel;
+});
+
+$("#block-button").on("click", function (event) {
+  game.currentObject = GO.Library.block;
 });
 
 $("#glider-button").on("click", function (event) {

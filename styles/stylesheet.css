@@ -76,6 +76,8 @@ select, input {
 }
 
 .cell-pixel {
+  cursor: none;
+
   float: left;
   margin: 0;
   border: 1px solid #333;
@@ -84,10 +86,6 @@ select, input {
 
   font-weight: bold;
   text-align: center;
-}
-
-.cell-pixel:hover {
-  background: yellow;
 }
 
 .alive {
@@ -182,4 +180,8 @@ select, input {
 #external-links {
   position: absolute;
   bottom: 0px;
+}
+
+.highlighted {
+  background: yellow;
 }

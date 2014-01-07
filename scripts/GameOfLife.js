@@ -89,7 +89,7 @@
       var y = location["y"] + dy;
 
       if (0 < x && 0 < y && x < this.width && y < this.height) {
-        game.grid[x][y] = true;
+        game.grid[x][y] = !game.grid[x][y];
       }
     });
   };
