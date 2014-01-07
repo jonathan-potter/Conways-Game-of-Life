@@ -3,6 +3,10 @@
 
   var Library = GO.Library = {};
 
+  Library.pixel = [
+    {x: 0, y: 0}
+  ];
+
   Library.glider = [
     {x: -1, y: 0},
     {x: 0, y: 1},

@@ -20,10 +20,13 @@ for (var y = 0;y < width;y++) {
 
 $(".cell-pixel").on("click", function (event) {
   $element = $(event.currentTarget);
-  $element.toggleClass("alive");
-  x = $element.attr("x");
-  y = $element.attr("y");
-  game.grid[x][y] = !game.grid[x][y];
+  x = parseInt($element.attr("x"));
+  y = parseInt($element.attr("y"));
+  // game.grid[x][y] = !game.grid[x][y];
+
+  var location = {x: x, y: y};
+  game.placeObjectAtLocation(game.currentObject, location);
+  game.draw();
 });
 
 $("#speed-up-button").on("click", function (event) {
@@ -73,19 +76,23 @@ $("#clear-button").on("click", function (event) {
 });
 
 $("#glider-button").on("click", function (event) {
-  var location = {x: 24, y: 24};
-  var object = GO.Library.glider;
+  // var location = {x: 24, y: 24};
+  // var object = GO.Library.glider;
+  //
+  // GO.MatrixOps.clearGrid(game.grid);
+  // game.placeObjectAtLocation(object, location);
+  // game.draw();
 
-  GO.MatrixOps.clearGrid(game.grid);
-  game.placeObjectAtLocation(object, location);
-  game.draw();
+  game.currentObject = GO.Library.glider;
 });
 
 $("#glider-gun-button").on("click", function (event) {
-  var location = {x: 24, y: 24};
-  var object = GO.Library.gliderGun;
+  // var location = {x: 24, y: 24};
+  // var object = GO.Library.gliderGun;
+  //
+  // GO.MatrixOps.clearGrid(game.grid);
+  // game.placeObjectAtLocation(object, location);
+  // game.draw();
 
-  GO.MatrixOps.clearGrid(game.grid);
-  game.placeObjectAtLocation(object, location);
-  game.draw();
+  game.currentObject = GO.Library.gliderGun;
 });
