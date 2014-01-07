@@ -4,13 +4,17 @@ var height = 50;
 var main = document.getElementById("main");
 
 for (var x = 0;x < width;x++) {
+  var row = document.createElement("li");
+  main.appendChild(row);
+  var rowElements = document.createElement("ul");
+  row.appendChild(rowElements);
   for (var y = 0;y < height;y++) {
     var element = document.createElement("li");
     element.setAttribute("x", x);
     element.setAttribute("y", y);
     element.setAttribute("id", "x" + x + "y" + y);
-    element.classList.add("cell-pixel")
-    main.appendChild(element);
+    element.classList.add("cell-pixel");
+    rowElements.appendChild(element);
   }
 }
 
