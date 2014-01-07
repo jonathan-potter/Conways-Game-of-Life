@@ -16,6 +16,17 @@
     return grid;
   };
 
+  MatrixOps.clearGrid = function (grid) {
+    var width = grid.length;
+    var height = grid[0].length;
+
+    MatrixOps.eachInsideBorder(width, height, function (x, y) {
+      grid[x][y] = false;
+    });
+
+    return grid;
+  };
+
   MatrixOps.randomizeContents = function (grid) {
     var width = grid.length;
     var height = grid[0].length;

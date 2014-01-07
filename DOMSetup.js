@@ -3,12 +3,12 @@ var height = 50;
 
 var main = document.getElementById("main");
 
-for (var x = 0;x < width;x++) {
+for (var y = 0;y < width;y++) {
   var row = document.createElement("li");
   main.appendChild(row);
   var rowElements = document.createElement("ul");
   row.appendChild(rowElements);
-  for (var y = 0;y < height;y++) {
+  for (var x = 0;x < height;x++) {
     var element = document.createElement("li");
     element.setAttribute("x", x);
     element.setAttribute("y", y);
@@ -65,4 +65,27 @@ $("#step-button").on("click", function (event) {
 
 $("#pause-button").on("click", function (event) {
   game.stop();
+});
+
+$("#clear-button").on("click", function (event) {
+  GO.MatrixOps.clearGrid(game.grid);
+  game.draw();
+});
+
+$("#glider-button").on("click", function (event) {
+  var location = {x: 24, y: 24};
+  var object = GO.Library.glider;
+
+  GO.MatrixOps.clearGrid(game.grid);
+  game.placeObjectAtLocation(object, location);
+  game.draw();
+});
+
+$("#glider-gun-button").on("click", function (event) {
+  var location = {x: 24, y: 24};
+  var object = GO.Library.gliderGun;
+
+  GO.MatrixOps.clearGrid(game.grid);
+  game.placeObjectAtLocation(object, location);
+  game.draw();
 });

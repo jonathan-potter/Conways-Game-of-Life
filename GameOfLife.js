@@ -79,4 +79,18 @@
     game.draw();
   };
 
+  Game.prototype.placeObjectAtLocation = function(object, location) {
+    object.forEach(function (element) {
+      var dx = element["x"];
+      var dy = element["y"];
+
+      var x = location["x"] + dx;
+      var y = location["y"] + dy;
+
+      if (0 < x && 0 < y && x < this.width && y < this.height) {
+        game.grid[x][y] = true;
+      }
+    });
+  };
+
 })(this);
