@@ -112,33 +112,19 @@ $("#clear-button").on("click", function (event) {
 });
 
 $("#pixel-button").on("click", function (event) {
-  game.currentObject = GO.Library.pixel;
+  game.currentObject = GO.Library.pixel();
 });
 
 $("#block-button").on("click", function (event) {
-  game.currentObject = GO.Library.block;
+  game.currentObject = GO.Library.block();
 });
 
 $("#glider-button").on("click", function (event) {
-  // var location = {x: 24, y: 24};
-  // var object = GO.Library.glider;
-  //
-  // GO.MatrixOps.clearGrid(game.grid);
-  // game.placeObjectAtLocation(object, location);
-  // game.draw();
-
-  game.currentObject = GO.Library.glider;
+  game.currentObject = GO.Library.glider();
 });
 
 $("#glider-gun-button").on("click", function (event) {
-  // var location = {x: 24, y: 24};
-  // var object = GO.Library.gliderGun;
-  //
-  // GO.MatrixOps.clearGrid(game.grid);
-  // game.placeObjectAtLocation(object, location);
-  // game.draw();
-
-  game.currentObject = GO.Library.gliderGun;
+  game.currentObject = GO.Library.gliderGun();
 });
 
 $("#flip-lr").on("click", function () {

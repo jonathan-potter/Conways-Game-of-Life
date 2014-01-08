@@ -19,7 +19,7 @@
     this.height = height;
     this.grid = GO.MatrixOps.createGrid(width, height);
     this.tickrate = GO.tickrate;
-    this.currentObject = GO.Library.pixel;
+    this.currentObject = GO.Library.pixel();
     GO.MatrixOps.randomizeContents(this.grid);
   };
 
