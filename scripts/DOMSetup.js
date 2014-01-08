@@ -1,5 +1,5 @@
-var width = 50;
-var height = 50;
+var width = 52;
+var height = 52;
 
 var main = document.getElementById("main");
 
@@ -7,12 +7,12 @@ var clearSelectedObject = function (selector) {
   $(selector).removeClass("selected-mode");
 };
 
-for (var y = 0;y < width;y++) {
+for (var y = 1;y < (width - 1);y++) {
   var row = document.createElement("li");
   main.appendChild(row);
   var rowElements = document.createElement("ul");
   row.appendChild(rowElements);
-  for (var x = 0;x < height;x++) {
+  for (var x = 1;x < (height - 1);x++) {
     var element = document.createElement("li");
     element.setAttribute("x", x);
     element.setAttribute("y", y);
