@@ -3,6 +3,10 @@ var height = 50;
 
 var main = document.getElementById("main");
 
+var clearSelectedObject = function (selector) {
+  $(selector).removeClass("selected-mode");
+};
+
 for (var y = 0;y < width;y++) {
   var row = document.createElement("li");
   main.appendChild(row);
@@ -67,7 +71,7 @@ $(".cell-pixel").on("mouseover", function (event) {
 
 $("#speed-up-button").on("click", function (event) {
   game.tickrate = game.tickrate / 2;
-  $("#tickrate-indicator").html("Tickrate: " + game.tickrate);
+  $("#tickrate-indicator").html("tick period (ms): " + game.tickrate);
   if (game.active) {
     game.stop();
     game.start();
@@ -78,7 +82,7 @@ $("#speed-up-button").on("click", function (event) {
 
 $("#speed-down-button").on("click", function (event) {
   game.tickrate = game.tickrate * 2;
-  $("#tickrate-indicator").html("Tickrate: " + game.tickrate);
+  $("#tickrate-indicator").html("tick period (ms): " + game.tickrate);
   if (game.active) {
     game.stop();
     game.start();
@@ -95,15 +99,27 @@ $("#randomize-button").on("click", function (event) {
 
 $("#play-button").on("click", function (event) {
   game.start();
+  clearSelectedObject(".mode-list");
+
+  $element = $(event.currentTarget);
+  $element.addClass("selected-mode");
 });
 
 $("#step-button").on("click", function (event) {
   game.stop();
+  clearSelectedObject(".mode-list");
+
+  $element = $("#pause-button");
+  $element.addClass("selected-mode");
   game.step();
 });
 
 $("#pause-button").on("click", function (event) {
   game.stop();
+  clearSelectedObject(".mode-list");
+
+  $element = $(event.currentTarget);
+  $element.addClass("selected-mode");
 });
 
 $("#clear-button").on("click", function (event) {
@@ -113,21 +129,37 @@ $("#clear-button").on("click", function (event) {
 
 $("#pixel-button").on("click", function (event) {
   game.currentObject = GO.Library.pixel();
+  clearSelectedObject(".object-list");
+
+  $element = $(event.currentTarget);
+  $element.addClass("selected-mode");
 });
 
 $("#block-button").on("click", function (event) {
   game.currentObject = GO.Library.block();
+  clearSelectedObject(".object-list");
+
+  $element = $(event.currentTarget);
+  $element.addClass("selected-mode");
 });
 
 $("#glider-button").on("click", function (event) {
   game.currentObject = GO.Library.glider();
+  clearSelectedObject(".object-list");
+
+  $element = $(event.currentTarget);
+  $element.addClass("selected-mode");
 });
 
 $("#glider-gun-button").on("click", function (event) {
   game.currentObject = GO.Library.gliderGun();
+  clearSelectedObject(".object-list");
+
+  $element = $(event.currentTarget);
+  $element.addClass("selected-mode");
 });
 
-$("#flip-lr").on("click", function () {
+$("#flip-lr").on("click", function (event) {
   GO.Library.Object.fliplr(game.currentObject);
 });
 

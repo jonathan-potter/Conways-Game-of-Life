@@ -200,3 +200,11 @@ select, input {
 .highlighted {
   background: yellow;
 }
+
+.selected-mode {
+  background: #ff6;
+}
+
+.selected-mode:hover {
+  background: #ff9;
+}

@@ -1,7 +1,7 @@
 (function (root) {
   var GO = root.GO = (root.GO || {});
 
-  GO.tickrate = 16;
+  GO.tickrate = 64;
 
   var createPixel = function (ctx) {
     var pixel = ctx.createImageData(1,1); // only do this once per page
