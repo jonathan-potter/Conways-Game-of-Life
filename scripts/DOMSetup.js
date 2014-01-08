@@ -140,3 +140,15 @@ $("#glider-gun-button").on("click", function (event) {
 
   game.currentObject = GO.Library.gliderGun;
 });
+
+$("#flip-lr").on("click", function () {
+  GO.Library.Object.fliplr(game.currentObject);
+});
+
+$("#flip-ud").on("click", function () {
+  GO.Library.Object.flipud(game.currentObject);
+});
+
+$("#rotate-button").on("click", function () {
+  GO.Library.Object.rotate(game.currentObject);
+});

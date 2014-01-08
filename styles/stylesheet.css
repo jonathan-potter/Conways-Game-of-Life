@@ -32,11 +32,16 @@ h1,main,div,canvas,select,input,body,canvas,header,ul,li,p {
   color: white;
 }
 
-#main {
-  display: inline;
+.left {
   float: left;
-  border-style:solid;
-  border-color: white;
+}
+
+.right {
+  float: right;
+}
+
+#main {
+  float: left;
   padding: 0;
   margin: 0;
   border: 4px solid white;
@@ -66,7 +71,7 @@ header > h1 {
 }
 
 .wrapper {
-  width: 550px;
+  width: 580px;
   margin: auto;
 }
 
@@ -111,11 +116,10 @@ select, input {
   cursor: pointer;
 }
 
-#sidebar-button-cluster {
+.sidebar-button-cluster {
   height: 504px;
   position: relative;
-  float: left;
-  width: 30px;
+  width: 28px;
   margin: 4px;
   margin-bottom: 0;
 }
@@ -123,6 +127,7 @@ select, input {
 #bottom-button-cluster {
   padding: 4px;
   width: 498px;
+  margin-left: 36px;
 }
 
 .play-image {
@@ -140,7 +145,12 @@ select, input {
   top: -1;
 }
 
-.square-button {
+.side-button {
+  width: 18px;
+  height: 18px;
+}
+
+.side-button img {
   width: 18px;
   height: 18px;
 }
@@ -182,7 +192,7 @@ select, input {
   border-radius: 2px;
 }
 
-#external-links {
+.sidebar-bottom-cluster {
   position: absolute;
   bottom: 0px;
 }

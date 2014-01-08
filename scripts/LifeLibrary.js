@@ -2,6 +2,29 @@
   var GO = root.GO = (root.GO || {});
 
   var Library = GO.Library = {};
+  Library.Object = {};
+
+  Library.Object.fliplr = function (object) {
+    object.forEach (function (element) {
+      element["x"] = -element["x"];
+    });
+  };
+
+  Library.Object.flipud = function (object) {
+    object.forEach (function (element) {
+      element["y"] = -element["y"];
+    });
+  };
+
+  Library.Object.rotate = function (object) {
+    object.forEach (function (element) {
+      var x = element["x"];
+      var y = element["y"];
+
+      element["x"] = -y;
+      element["y"] = x;
+    });
+  };
 
   Library.pixel = [
     {x: 0, y: 0}

@@ -10,14 +10,25 @@
       <header>
         <h1>Conway's Game of Life</h1>
       </header>
-      <ul class="main clearfix" id="main"></ul>
-      <div id="sidebar-button-cluster">
-        <div class="button square-button" id="speed-up-button">+</div>
-        <div class="button square-button" id="speed-down-button">-</div>
-        <div class="button square-button play-image" id="play-button">&#9658;</div>
-        <div class="button square-button" id="step-button">|<div class="play-image" id="step-arrow-modifier">&#9658;</div></div>
-        <div class="button square-button" id="pause-button">||</div>
-        <nav id="external-links">
+      <div class="sidebar-button-cluster left">
+        <div class="button side-button image-button" id="pixel-button"><img src="images/pixel.png"></img></div>
+        <div class="button side-button image-button" id="block-button"><img src="images/block.png"></img></div>
+        <div class="button side-button image-button" id="glider-button"><img src="images/glider.png"></img></div>
+        <div class="button side-button image-button" id="glider-gun-button"><img src="images/gosper-glider-gun.png"></img></div>
+        <div class="sidebar-bottom-cluster">
+          <div class="button side-button image-button" id="flip-lr"><img src="images/arrow-rl.png"></img></div>
+          <div class="button side-button image-button" id="flip-ud"><img src="images/arrow-ud.png"></img></div>
+          <div class="button side-button image-button" id="rotate-button"><img src="images/rotate-90.png"></img></div>
+        </div>
+      </div>
+      <ul class="main" id="main"></ul>
+      <div class="sidebar-button-cluster left">
+        <div class="button side-button" id="speed-up-button">+</div>
+        <div class="button side-button" id="speed-down-button">-</div>
+        <div class="button side-button play-image" id="play-button">&#9658;</div>
+        <div class="button side-button" id="step-button">|<div class="play-image" id="step-arrow-modifier">&#9658;</div></div>
+        <div class="button side-button" id="pause-button">||</div>
+        <nav class="sidebar-bottom-cluster">
           <ul>
             <li>
               <a href="http://github.com/jonathan-potter/Conways-Game-of-Life">
@@ -33,10 +44,6 @@
         </nav>
       </div>
       <div class="clearfix" id="bottom-button-cluster">
-        <div class="button bottom-button" id="pixel-button"><img src="images/pixel.png"></img></div>
-        <div class="button bottom-button" id="block-button"><img src="images/block.png"></img></div>
-        <div class="button bottom-button" id="glider-button"><img src="images/glider.png"></img></div>
-        <div class="button bottom-button" id="glider-gun-button"><img src="images/gosper-glider-gun.png"></img></div>
         <div class="button bottom-button" id="randomize-button">randomize</div>
         <div class="button bottom-button" id="clear-button">clear</div>
         <div id="tickrate-indicator">Tickrate: 16</div>
