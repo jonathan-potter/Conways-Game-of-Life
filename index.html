@@ -11,32 +11,32 @@
         <h1>Conway's Game of Life</h1>
       </header>
       <div class="sidebar-button-cluster left">
-        <div class="button side-button image-button object-list selected-mode" id="pixel-button"><img src="images/pixel.png"></img></div>
-        <div class="button side-button image-button object-list" id="block-button"><img src="images/block.png"></img></div>
-        <div class="button side-button image-button object-list" id="glider-button"><img src="images/glider.png"></img></div>
-        <div class="button side-button image-button object-list" id="glider-gun-button"><img src="images/gosper-glider-gun.png"></img></div>
+        <div class="button side-button image-button object-list selected-mode" title="pixel" id="pixel-button"><img src="images/pixel.png"></img></div>
+        <div class="button side-button image-button object-list" title="block" id="block-button"><img src="images/block.png"></img></div>
+        <div class="button side-button image-button object-list" title="glider" id="glider-button"><img src="images/glider.png"></img></div>
+        <div class="button side-button image-button object-list" title="Gosper Glider Gun" id="glider-gun-button"><img src="images/gosper-glider-gun.png"></img></div>
         <div class="sidebar-bottom-cluster">
-          <div class="button side-button image-button" id="flip-lr"><img src="images/arrow-rl.png"></img></div>
-          <div class="button side-button image-button" id="flip-ud"><img src="images/arrow-ud.png"></img></div>
-          <div class="button side-button image-button" id="rotate-button"><img src="images/rotate-90.png"></img></div>
+          <div class="button side-button image-button" title="flip left/right" id="flip-lr"><img src="images/arrow-rl.png"></img></div>
+          <div class="button side-button image-button" title="flip up/down" id="flip-ud"><img src="images/arrow-ud.png"></img></div>
+          <div class="button side-button image-button" title="rotate 90 degrees" id="rotate-button"><img src="images/rotate-90.png"></img></div>
         </div>
       </div>
       <ul class="main" id="main"></ul>
       <div class="sidebar-button-cluster left">
-        <div class="button side-button" id="speed-up-button"><img src="images/plus-sign.png"></div>
-        <div class="button side-button" id="speed-down-button"><img src="images/minus-sign.png"></div>
-        <div class="button side-button selected-mode mode-list" id="play-button"><img src="images/play-icon.png"></div>
-        <div class="button side-button" id="step-button"><img src="images/step-icon.png"></div>
-        <div class="button side-button mode-list" id="pause-button"><img src="images/pause-icon.png"></div>
+        <div class="button side-button" title="speed up" id="speed-up-button"><img src="images/plus-sign.png"></div>
+        <div class="button side-button" title="speed down" id="speed-down-button"><img src="images/minus-sign.png"></div>
+        <div class="button side-button selected-mode mode-list" title="play" id="play-button"><img src="images/play-icon.png"></div>
+        <div class="button side-button" title="step" id="step-button"><img src="images/step-icon.png"></div>
+        <div class="button side-button mode-list" title="pause" id="pause-button"><img src="images/pause-icon.png"></div>
         <nav class="sidebar-bottom-cluster">
           <ul>
             <li>
-              <a href="http://github.com/jonathan-potter/Conways-Game-of-Life">
+              <a href="http://github.com/jonathan-potter/Conways-Game-of-Life" title="Github repo">
                 <img src="images/GitHub-Mark-32px.png" class="link-square"></img>
               </a>
             </li>
             <li>
-              <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">
+              <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life" title="Wikipedia: Conway's Game of Life">
                 <img src="images/Wikipedia-icon.svg.png" class="link-square"></img>
               </a>
             </li>
@@ -44,8 +44,8 @@
         </nav>
       </div>
       <div class="clearfix" id="bottom-button-cluster">
-        <div class="button bottom-button" id="randomize-button">randomize</div>
-        <div class="button bottom-button" id="clear-button">clear</div>
+        <div class="button bottom-button" title="randomize board" id="randomize-button">randomize</div>
+        <div class="button bottom-button" title="clear board" id="clear-button">clear</div>
         <div id="tickrate-indicator">tick period (ms): 64</div>
       </div>
     </div>
